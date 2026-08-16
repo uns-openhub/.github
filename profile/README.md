@@ -6,6 +6,10 @@ Self-hosted semantic context infrastructure with open SDKs.
 
 **Website:** [www.uns-openhub.com](https://www.uns-openhub.com)
 
+**Articles:** [Industrial context and architecture notes](https://www.uns-openhub.com/articles/)
+
+**Videos:** [UNS OpenHub on YouTube](https://www.youtube.com/@UNSOPENHUB)
+
 UNS OpenHub combines a self-hosted Runtime with open TypeScript and Python SDKs
 for building a governed Unified Namespace. It connects live values, events,
 history, metadata, and relationships without tying an object's identity to its
