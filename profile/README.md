@@ -6,6 +6,10 @@ Self-hosted semantic context infrastructure with open SDKs.
 
 **Website:** [www.uns-openhub.com](https://www.uns-openhub.com)
 
+**Platform:** [Product model and scope](https://www.uns-openhub.com/platform/)
+
+**Integrations:** [Public components and connectivity status](https://www.uns-openhub.com/integrations/)
+
 **Articles:** [Industrial context and architecture notes](https://www.uns-openhub.com/articles/)
 
 **Videos:** [UNS OpenHub on YouTube](https://www.youtube.com/@UNSOPENHUB)
@@ -85,6 +89,9 @@ declarative domain packs, provider add-ons, schema and data-catalog tooling,
 automations, service lifecycle supervision, configuration snapshots, and
 cluster-aware workload placement.
 
+[Explore the platform model and scope](https://www.uns-openhub.com/platform/).
+[Review public and developing integrations](https://www.uns-openhub.com/integrations/).
+
 ## How the public pieces fit
 
 ```text
@@ -102,15 +109,17 @@ Each public repository documents its own prerequisites, configuration, and
 verification commands. Use `rtt-demo-app` for a first end-to-end example and
 `uns-kit` as the TypeScript and Python SDK reference.
 
-## Roadmap
+## Connectivity direction
 
-The public stack is planned to expand with:
+Current private development and pilot preparation include:
 
 - `uns-openhub-runtime` — the current private preview and planned deployable
   public entry point.
 - `uns-bridge-mqtt` — mapping existing third-party MQTT topics and payloads
   into governed OpenHub context.
 - `uns-bridge-opcua` — mapping OPC UA nodes and values into the same model.
+- Ignition Edge integration — a read-oriented pilot in preparation, with
+  Ignition retaining device drivers, tags, local buffering, and edge behavior.
 
 Assistant capabilities are planned for a later phase as a governed consumer
 of platform context. Current private work explores cited operational guidance,
@@ -119,8 +128,8 @@ generation, and disabled-by-default MCP-compatible local tool access. It
 currently uses OpenAI; provider and on-prem inference alternatives are being
 evaluated.
 
-Follow the current overview at
-[www.uns-openhub.com](https://www.uns-openhub.com/#roadmap).
+Follow current delivery status at
+[www.uns-openhub.com/integrations/](https://www.uns-openhub.com/integrations/).
 
 ## Participate
 
