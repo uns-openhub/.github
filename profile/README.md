@@ -8,7 +8,7 @@ Self-hosted semantic context infrastructure with open SDKs.
 
 **Platform:** [Product model and scope](https://www.uns-openhub.com/platform/)
 
-**Integrations:** [Public components and connectivity status](https://www.uns-openhub.com/integrations/)
+**Integrations:** [Automation, service bundles, and connectivity](https://www.uns-openhub.com/integrations/)
 
 **Articles:** [Industrial context and architecture notes](https://www.uns-openhub.com/articles/)
 
@@ -121,12 +121,21 @@ Current private development and pilot preparation include:
 - Ignition Edge integration — a read-oriented pilot in preparation, with
   Ignition retaining device drivers, tags, local buffering, and edge behavior.
 
-Assistant capabilities are planned for a later phase as a governed consumer
-of platform context. Current private work explores cited operational guidance,
-operator-reviewed schema proposals, validated TypeScript and Python service
-generation, and disabled-by-default MCP-compatible local tool access. It
-currently uses OpenAI; provider and on-prem inference alternatives are being
-evaluated.
+The private Runtime preview includes two bounded integration-authoring paths.
+Operators can configure Triggers for event rules and Captures for stateful,
+windowed data logging. For custom services, the in-app Agent resolves
+operator-confirmed UNS paths and source shapes and creates a validated
+`service.bundle.json`.
+
+The public TypeScript and Python CLIs scaffold that bundle into a project with
+`SERVICE_SPEC.md`, `AGENTS.md`, and starter code. The explicit repository
+contract can then be handed to Codex, Claude, or another coding agent. This is a
+portable project handoff, not a native integration with each agent vendor or a
+claim of autonomous delivery.
+
+Broader Assistant capabilities, including operational guidance, RAG, schema
+proposals, and MCP-compatible tooling, remain later-phase work whose public
+scope and delivery are not final.
 
 Follow current delivery status at
 [www.uns-openhub.com/integrations/](https://www.uns-openhub.com/integrations/).
