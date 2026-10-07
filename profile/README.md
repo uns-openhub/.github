@@ -37,11 +37,11 @@ configuration, and lifecycle tooling together on infrastructure you control.
 Its core data plane combines the controller with open-source PostgreSQL,
 Eclipse Mosquitto, QuestDB, and Caddy and requires no managed cloud service.
 
-The SDKs, supporting services, reference application, and bootstrap are
-public. The complete integrated Runtime is currently distributed through a
-private preview.
+The Runtime, SDKs, supporting services, reference application, and bootstrap
+are publicly distributed. The controller and infrastructure remain separate
+components with their own license and operating requirements.
 
-Users with preview access can install the public, version-matched bootstrap on
+Install the public, version-matched bootstrap on
 macOS or Linux:
 
 ```sh
@@ -52,14 +52,14 @@ curl -fsSL \
 "$HOME/.local/bin/uns-bootstrap" install
 ```
 
-Docker or Podman with Compose is required. During the preview, Runtime access
-and private controller-image access are separate. Complete version-matched
+Docker or Podman with Compose is required. A registry login is needed only
+for restricted images or a private mirror. Complete version-matched
 installation and operating instructions are included in the downloaded
 Runtime bundle.
 
 [Open Runtime documentation](https://www.uns-openhub.com/docs/).
 [Review the public bootstrap](https://github.com/uns-openhub/uns-openhub-bootstrap).
-[Request preview access](https://www.uns-openhub.com/#early-access).
+[Install the public Runtime](https://www.uns-openhub.com/docs/runtime/).
 
 ## Choose your SDK
 
@@ -80,6 +80,8 @@ repository. The Python source and documentation live in
 | [`rtt-demo-app`](https://github.com/uns-openhub/rtt-demo-app) | Seeded hot-rolling simulator and end-to-end reference application |
 | [`uns-archiver`](https://github.com/uns-openhub/uns-archiver) | QuestDB archiver for UNS data and table packets |
 | [`uns-api-global`](https://github.com/uns-openhub/uns-api-global) | Authenticated REST API for current and historical UNS data |
+| [`uns-bridge-opcua`](https://github.com/uns-openhub/uns-bridge-opcua) | Browse OPC UA nodes and publish reviewed signal mappings into existing UNS identities |
+| [`uns-bridge-mqtt`](https://github.com/uns-openhub/uns-bridge-mqtt) | Map external MQTT topics and JSON payloads into existing UNS identities |
 | [`node-red-contrib-uns`](https://github.com/uns-openhub/node-red-contrib-uns) | Node-RED nodes for subscribing to and publishing UNS messages |
 | [`uns-openhub-bootstrap`](https://github.com/uns-openhub/uns-openhub-bootstrap) | Minimal verified installer for version-matched Runtime releases |
 
@@ -90,7 +92,7 @@ automations, service lifecycle supervision, configuration snapshots, and
 cluster-aware workload placement.
 
 [Explore the platform model and scope](https://www.uns-openhub.com/platform/).
-[Review public and developing integrations](https://www.uns-openhub.com/integrations/).
+[Review public bridges and integration paths](https://www.uns-openhub.com/integrations/).
 
 ## How the public pieces fit
 
@@ -109,19 +111,20 @@ Each public repository documents its own prerequisites, configuration, and
 verification commands. Use `rtt-demo-app` for a first end-to-end example and
 `uns-kit` as the TypeScript and Python SDK reference.
 
-## Connectivity direction
+## Connectivity
 
-Current private development and pilot preparation include:
+The public [OPC UA Bridge](https://github.com/uns-openhub/uns-bridge-opcua/releases/tag/v2.0.1)
+and [MQTT Bridge](https://github.com/uns-openhub/uns-bridge-mqtt/releases/tag/v2.0.1)
+2.0.1 releases are available through the signed add-on catalog. Review source
+parameters and UNS targets, then explicitly start ingestion in a compatible
+Runtime. See the [device workflow guide](https://www.uns-openhub.com/docs/guides/connectivity/device-to-analysis/).
 
-- `uns-openhub-runtime` — the current private preview and planned deployable
-  public entry point.
-- `uns-bridge-mqtt` — mapping existing third-party MQTT topics and payloads
-  into governed OpenHub context.
-- `uns-bridge-opcua` — mapping OPC UA nodes and values into the same model.
+Pilot preparation includes:
+
 - Ignition Edge integration — a read-oriented pilot in preparation, with
   Ignition retaining device drivers, tags, local buffering, and edge behavior.
 
-The private Runtime preview includes two bounded integration-authoring paths.
+The Runtime includes two bounded integration-authoring paths.
 Operators can configure Triggers for event rules and Captures for stateful,
 windowed data logging. For custom services, the in-app Agent resolves
 operator-confirmed UNS paths and source shapes and creates a validated
